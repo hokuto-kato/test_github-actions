@@ -28,8 +28,8 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_EMOJI: rocket
-          SLACK_TITLE: 'Success to Deploy to GitHub Pages'
-          SLACK_MESSAGE: 'Deployed Successfully : http://mitsubishi-chemical.details.co.jp/'
+          SLACK_TITLE: 'Deployed Successfully'
+          SLACK_MESSAGE: 'http://mitsubishi-chemical.details.co.jp/'
       - name: Failure notification
         uses: rtCamp/action-slack-notify@v2
         if: ${{ failure() }}
@@ -37,5 +37,4 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: '#dc143c'
           SLACK_ICON_EMOJI: boom
-          SLACK_TITLE: 'Failure to Deploy to GitHub Pages'
-          SLACK_MESSAGE: 'Deploy Failed'
+          SLACK_TITLE: 'Deploy Failed'
