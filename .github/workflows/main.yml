@@ -17,9 +17,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           port: 21
-          protocol: ftps
+          protocol: ftp
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          run: echo ${{secrets.FTP_SERVER }}
