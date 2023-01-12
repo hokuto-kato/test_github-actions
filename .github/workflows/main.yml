@@ -29,12 +29,12 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_EMOJI: rocket
           SLACK_TITLE: 'Deployed Successfully'
-          SLACK_MESSAGE: 'http://mitsubishi-chemical.details.co.jp/saiyo/'
+          SLACK_MESSAGE: ${{secrets.DEMO_URL}}
       - name: Failure notification
         uses: rtCamp/action-slack-notify@v2
         if: ${{ failure() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: '#dc143c'
-          SLACK_ICON_EMOJI: thinking_face
+          SLACK_ICON_EMOJI: boom
           SLACK_TITLE: 'Deploy Failed'
