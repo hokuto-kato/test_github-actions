@@ -40,4 +40,4 @@ jobs:
           SLACK_COLOR: '#dc143c'
           SLACK_ICON_EMOJI: boom
           SLACK_TITLE: 'Deploy Failed'
-          SLACK_MESSAGE: ""
+          SLACK_MESSAGE: "Check the deployment settings"
