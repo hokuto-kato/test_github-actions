@@ -18,7 +18,7 @@ jobs:
         with:
           port: 21
           protocol: ftp
-          server: ${{ secrets.FTP_SERVER }}
+          server: 123
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
@@ -40,3 +40,4 @@ jobs:
           SLACK_COLOR: '#dc143c'
           SLACK_ICON_EMOJI: boom
           SLACK_TITLE: 'Deploy Failed'
+          SLACK_MESSAGE: ""
