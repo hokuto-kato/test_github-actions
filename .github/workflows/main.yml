@@ -18,13 +18,13 @@ jobs:
         with:
           port: 21
           protocol: ftp
-          server: 123
+          server: ${{ secrets.FTP_SERVERNAME }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
       - name: Success notification
         uses: rtCamp/action-slack-notify@v2
-        if: ${{ success() }}
+        if: success()
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: Deploy Notification
@@ -33,7 +33,7 @@ jobs:
           SLACK_MESSAGE: ${{secrets.DEMO_URL}}
       - name: Failure notification
         uses: rtCamp/action-slack-notify@v2
-        if: ${{ failure() }}
+        if: failure()
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: Deploy Notification
