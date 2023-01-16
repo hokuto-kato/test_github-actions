@@ -24,20 +24,20 @@ jobs:
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
       - name: Success notification
         uses: rtCamp/action-slack-notify@v2
-        if: success()
+        if: ${{ success() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: Deploy Notification
           SLACK_ICON_EMOJI: rocket
           SLACK_TITLE: 'Deployed Successfully'
-          SLACK_MESSAGE: ${{secrets.DEMO_URL}}
+          SLACK_MESSAGE: ${{ secrets.DEMO_URL }}
       - name: Failure notification
         uses: rtCamp/action-slack-notify@v2
-        if: failure()
+        if: ${{ failure() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: Deploy Notification
           SLACK_COLOR: '#dc143c'
           SLACK_ICON_EMOJI: boom
           SLACK_TITLE: 'Deploy Failed'
-          SLACK_MESSAGE: "Check the deployment settings"
+          SLACK_MESSAGE: 'Check the deployment settings'
